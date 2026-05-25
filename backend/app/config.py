@@ -38,7 +38,10 @@ class Config:
 
         self.SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-        cors_origins = os.getenv("CORS_ORIGINS", "http://localhost:5173")
+        cors_origins = os.getenv(
+            "CORS_ORIGINS",
+            "http://localhost:5173,https://smart-job-portal-system-sigma.vercel.app"
+        )
         self.CORS_ORIGINS = [origin.strip() for origin in cors_origins.split(",") if origin.strip()]
 
         admin_emails = os.getenv("ADMIN_EMAILS", "")
